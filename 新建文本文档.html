@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var obj = {
+        //     name: '黑马',
+        //     a(name) {
+        //         console.log(`a:${name}`);
+        //         return this;
+        //     },
+        //     b(name) {
+        //         console.log(`b:${name}`);
+        //         return this;
+
+        //     },
+        //     getName(name) {
+        //         console.log(`getName:${name}`);
+        //         return this;
+        //     },
+
+        // }
+        // obj.a('学习');
+        // obj.b('学习');
+        // obj.getName('study')
+
+
+        function F(name) {
+            this.name = name;
+        }
+
+        F.prototype.foo = function () {
+            console.log(foo);
+        }
+
+        // 构建子类原型的方法
+        function createObj() {
+            function T() {};
+            T.prototype = F.prototype;
+            var t = new T();
+            return t;
+        }
+
+        function S(name) {
+
+            // 第一步、继承实例上面的属性
+            F.call(this, name);
+        }
+
+        // 第二步、继承原型上面的属性
+        S.prototype = createObj();
+
+        // 第三步、构造函数指回子类
+        S.prototype.constructor = S;
+        S.prototype.speak = function () {
+            console.log('speak');
+        }
+
+        var s = new S('黑马');
+
+        console.log(s);
+    </script>
+</body>
+
+</html>

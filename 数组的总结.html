@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // map()： 指“ 映射”， 对数组中的每一项运行给定函数， 返回每次函数调用的结果组成的数组
+        var arr = [1, 3, 5, 8, 11, 21];
+        var newAr = arr.map(function (value, index, array) {
+            return value * index;
+        })
+        console.log(newAr); // [0,3,10,24,44,105]
+
+        // sort()：将数组里的项从小到大排序
+        var arr = [1, 2, 4, 7, 12, 4];
+        // sort()方法比较的是字符串，没有按照数值的大小对数字进行排序，要实现这一点，就必须使用一个排序函数
+        // function sortNumber(a, b) {
+        //     return a - b
+        // }
+        // console.log(arr.sort(sortNumber)); // [1, 2, 4, 4, 7, 12]
+
+        
+        // 写一个简单的排序(数组去重)
+        function sorts(str) {
+            return Array.from(new Set(str)).sort(function (a, b) {
+                return b - a
+            })
+        }
+        var newArr = sorts(arr)
+        console.log(newArr);
+
+        // join，就是把数组转换成字符串，然后给他规定个连接字符，默认的是逗号(  ，)
+        var arr1 = ['a', 'b', 'c', 'd']
+        console.log(arr1.join('-')); // a-b-c-d
+
+        // push():  把里面的内容添加到数组末尾，并返回修改后的长度。
+        // pop()： 移除数组最后一项， 返回移除的那个值， 减少数组的length。
+        // shift()：删除原数组第一项，并返回删除元素的值；如果数组为空则返回undefined 。 
+        // unshift:将参数添加到原数组开头，并返回数组的长度 。
+
+        var arr2 = [1, 2, 3, 4, 7, 9]
+        console.log(arr2.push()); //并返回修改后的长度  此时是 6
+        console.log(arr2.pop()); // 返回移除的那个值 此时打印的是 9  
+        console.log(arr2.shift()); // 1
+        console.log(arr2.unshift()); // 4
+        console.log(arr2); // [ 2, 3, 4, 7, ]
+
+        // reverse()：反转数组项的顺序。
+
+        var arr3 = [1, 3, 6, 9, 2];
+        console.log(arr3.reverse()); //  [2, 9, 6, 3, 1]
+
+        //  concat() ：将参数添加到原数组中。这个方法会先创建当前数组一个副本，然后将接收到的参数添加到这个副本的末尾，最后返回新构建的数组。在没有给 concat()方法传递参数的情况下，它只是复制当前数组并返回副本。
+        // 　　　　书写格式：arr.concat()，括号里面写内容  ("字符串要加引号"),
+        var arr4 = [1, 3, 4, 7, 8, 2]
+        console.log(arr4.concat('pink')); // [1, 3, 4, 7, 8, 2, "pink"]
+
+        // indexOf()：接收两个参数：要查找的项和（可选的）表示查找起点位置的索引。从数组的开头（位置 0）开始向后查找。
+        // lastIndexOf：接收两个参数：要查找的项和（可选的）表示查找起点位置的索引。其中， 从数组的末尾开始向前查找
+
+        var str = '改革春风吹满地，春天来了';
+        console.log(str.indexOf('春')); // 返回字符串所对应的索引号  此时是 2 ；
+        console.log(str.indexOf('春', 4)); // 8 
+        console.log(str.lastIndexOf('春')); // 8 
+
+        // forEach()：对数组进行遍历循环，对数组中的每一项运行给定函数。这个方法没有返回值。参数都是function类型，默认有传参，参数分别为：遍历的数组内容；第对应的数组索引，数组本身。
+
+        var arr5 = ['pink', 'blue', 'red', 'green', 'black'];
+        arr5.forEach(function (value, index, array) {
+            console.log(value + '|' + index + '|' + (array === arr5))
+        })
+        // pink | 0 | true
+        // blue | 1 | true
+        // red | 2 | true
+        // green | 3 | true
+        // black | 4 | true
+
+        // filter()：“ 过滤” 功能， 数组中的每一项运行给定函数， 返回满足过滤条件组成的数组。 书写格式： arr.filter()
+        var ary = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        var ary1 = ary.filter(function (value, index) {
+            return value > 3
+        });
+        console.log(ary1);
+
+        //  some()：判断数组中是否存在满足条件的项，只要有一项满足条件，就会返回true。
+        // 书写格式：arr.some()
+
+        var arr6 = [1, 3, 7, 4, 3, 9, 7];
+        var new1 = arr6.some(function (value, index) {
+            return value > 3
+        })
+        console.log(new1); // true
+
+
+        //every()：判断数组中每一项都是否满足条件，只有所有项都满足条件，才会返回true。
+        //书写格式：arr.every()
+        var arr7 = [3, 7, 4, 3, 9, 7];
+        var new2 = arr7.every(function (value, index) {
+            return value >= 3
+        })
+        console.log(new2); // true 
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+header {
+    box-sizing: border-box;
+    width: 10rem;
+    height: 3.573333rem;
+    background: url(../images/background.png) no-repeat;
+}
+
+.header-t {
+    position: relative;
+    display: flex;
+    padding-top: 0.64rem;
+    padding-left: 0.64rem;
+}
+
+header .logo {
+    width: 1.706667rem;
+    height: 1.706667rem;
+    border-radius: 0.053333rem;
+    margin: 0.64rem 0.426667rem 0.48rem 0.64rem;
+}
+
+header .logo img {
+    width: 100%;
+    height: 100%;
+}
+
+header .content {
+    padding-top: 0.693333rem;
+}
+
+.content span {
+    margin-right: 0.16rem;
+    display: inline-block;
+    width: 0.8rem;
+    height: 0.493333rem;
+    text-align: center;
+    line-height: 0.493333rem;
+    color: #fff;
+    background-color: #f01414;
+}
+
+.content h2 {
+    display: inline-block;
+    font-size: 0.426667rem;
+    color: #fff;
+    line-height: 0.48rem;
+}
+
+.content p {
+    font-size: 0.32rem;
+    color: #fff;
+    font-weight: 200;
+    line-height: 0.32rem;
+    margin-top: 0.16rem;
+}
+.content img {
+    vertical-align: middle;
+}
+
+.content h4 {
+    display: inline-block;
+    font-size: 0.266667rem;
+    color: #fff;
+    margin-left: 0.106667rem;
+    font-weight: 200;
+    line-height: 0.32rem;
+}
+
+header .number {
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0.413333rem;
+    right: 0.333333rem;
+    font-size: 0.266667rem;
+    width: 1.186667rem;
+    height: 0.64rem;
+    /* text-align: center; */
+    padding-left: 16px;
+    line-height: 0.64rem;
+    color: #fff;
+    background-color: rgba(0, 0, 0, .2);
+    border-radius: 0.64rem;
+}
+
+header .number::after {
+    position: absolute;
+    top: 0.24rem;
+    right: 0.213333rem;
+    content: '';
+    width: 0.106667rem ;
+    height: 0.106667rem;
+    transform: rotate(45deg);
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+}
+.header-b {
+    height: 0.746667rem;
+    background-color: rgba(7, 17, 27, .2);
+}
+.header-b span {
+    position: relative;
+    font-size: 0.266667rem;
+    font-weight: 200;
+    color: #fff;
+    line-height: 0.746667rem;
+
+}
+.header-b img {
+    padding-left: 0.306667rem;
+    vertical-align: middle;
+}
+.header-b span::after {
+    position: absolute;
+    top: 0.106667rem;
+    right: -0.2rem;
+    content: '';
+    width: 0.106667rem ;
+    height: 0.106667rem;
+    transform: rotate(45deg);
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+}
+
+</html>
